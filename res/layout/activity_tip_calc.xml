@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TipCalcActivity" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="107dp"
+        android:layout_marginTop="57dp" >
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="138dp"
+        android:onClick="calcTip"
+        android:tag="@string/_10"
+        android:text="@string/ten_percent" />
+
+    <Button
+        android:id="@+id/btnfifteen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnten"
+        android:layout_alignBottom="@+id/btnten"
+        android:layout_toRightOf="@+id/btnten"
+        android:onClick="calcTip"
+        android:tag="@string/_15"
+        android:text="@string/fifteen_percent" />
+
+    <Button
+        android:id="@+id/btntwenty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnfifteen"
+        android:layout_alignBottom="@+id/btnfifteen"
+        android:layout_toRightOf="@+id/btnfifteen"
+        android:onClick="calcTip"
+        android:tag="@string/_20"
+        android:text="@string/twenty_percent" />
+
+    <EditText
+        android:id="@+id/tipinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clearTip"
+        android:layout_alignRight="@+id/btntwenty"
+        android:layout_alignTop="@+id/relativeLayout1"
+        android:ems="10"
+        android:hint="@string/tip_amount" />
+
+    <EditText
+        android:id="@+id/tipcalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tiplabel"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/btntwenty"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/tiplabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnten"
+        android:layout_alignRight="@+id/btntwenty"
+        android:layout_below="@+id/btnfifteen"
+        android:layout_marginTop="46dp"
+        android:editable="false"
+        android:ems="10"
+        android:text="@string/tip" />
+
+</RelativeLayout>
